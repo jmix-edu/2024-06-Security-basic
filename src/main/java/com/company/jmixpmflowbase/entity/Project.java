@@ -45,6 +45,18 @@ public class Project {
     @OneToMany(mappedBy = "project")
     private List<com.company.jmixpmflowbase.entity.Task> tasks;
 
+    @Composition
+    @OneToMany(mappedBy = "project")
+    private List<Document> documents;
+
+    public List<Document> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(List<Document> documents) {
+        this.documents = documents;
+    }
+
     public ProjectStatus getStatus() {
         return status == null ? null : ProjectStatus.fromId(status);
     }

@@ -1,7 +1,6 @@
-package com.company.jmixpmflowbase.view.project;
+package com.company.jmixpmflowbase.view.document;
 
 import com.company.jmixpmflowbase.entity.Document;
-import com.company.jmixpmflowbase.entity.Project;
 
 import com.company.jmixpmflowbase.view.main.MainView;
 
@@ -14,11 +13,13 @@ import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.view.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@Route(value = "projects/:id", layout = MainView.class)
-@ViewController("Project.detail")
-@ViewDescriptor("project-detail-view.xml")
-@EditedEntityContainer("projectDc")
-public class ProjectDetailView extends StandardDetailView<Project> {
+@Route(value = "documents", layout = MainView.class)
+@ViewController("Document.list")
+@ViewDescriptor("document-list-view.xml")
+@LookupComponent("documentsDataGrid")
+@DialogMode(width = "64em")
+public class DocumentListView extends StandardListView<Document> {
+
     @Autowired
     private UiComponents uiComponents;
     @Autowired
