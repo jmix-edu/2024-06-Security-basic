@@ -20,22 +20,4 @@ import org.springframework.beans.factory.annotation.Autowired;
 @DialogMode(width = "64em")
 public class DocumentListView extends StandardListView<Document> {
 
-    @Autowired
-    private UiComponents uiComponents;
-    @Autowired
-    private Downloader downloader;
-
-    @Supply(to = "documentsDataGrid.file", subject = "renderer")
-    private Renderer<Document> documentsDataGridFileRenderer() {
-        return new ComponentRenderer<JmixButton, Document>(document -> {
-            JmixButton button = uiComponents.create(JmixButton.class);
-            button.setText(document.getFile().getFileName());
-            button.setThemeName("tertiary-inline");
-            button.addClickListener(clickEvent -> {
-                downloader.download(document.getFile());
-            });
-
-            return button;
-        } );
-    }
 }

@@ -30,6 +30,7 @@
                                     uploadIcon="ADD_DOCK" clearButtonVisible="true"
                                     fileNameVisible="true"/>
             <textArea id="notesField" height="9.5em" property="notes"/>
+            <textField id="createdByField" property="createdBy"/>
         </formLayout>
         <hbox id="detailActions">
             <button id="saveAndCloseBtn" action="saveAction"/>
